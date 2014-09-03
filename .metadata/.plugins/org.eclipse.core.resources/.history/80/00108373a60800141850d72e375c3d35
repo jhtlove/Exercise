@@ -1,0 +1,23 @@
+package basic_level;
+
+public class StringMatch
+{
+
+	private String s1 = "abcd";
+	private String s2 = "acd";
+	private int num = 0;
+	
+	public int maxMatch()
+	{
+		char ss1[] = s1.toCharArray();
+		char ss2[] = s2.toCharArray();
+		return num;
+	}
+	
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}

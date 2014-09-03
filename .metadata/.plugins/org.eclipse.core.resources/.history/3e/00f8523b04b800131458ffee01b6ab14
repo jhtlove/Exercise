@@ -1,0 +1,14 @@
+package my.demo;
+
+public class TestEnum
+{
+
+	Enum Grade{A,B,C;};
+	
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}

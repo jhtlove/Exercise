@@ -1,0 +1,34 @@
+package testquestion;
+
+public class AddInList
+{
+	private Node head = new Node();
+	
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Node
+{
+	private int oneBit;
+	private Node next;
+	
+	Node()
+	{
+		oneBit = 0;
+		next = null;
+	}
+	
+	Node(int n)
+	{
+		if(n >=0 && n <=9)
+			oneBit = n;
+		next = null;
+	}
+	
+	
+}

@@ -1,0 +1,93 @@
+package testquestion;
+
+public class AddInList
+{
+	Node head = new Node();
+	
+	public void disList()
+	{
+		Node t = head.next;
+		while(t != null)
+		{
+			System.out.print(t.oneBit);
+			t = t.next;
+		}
+		System.out.println();
+	}
+	
+	public head initia(int num)
+	{
+		int temp = num;
+		int n = 0;
+		Node index = head;
+		do
+		{
+			n = temp % 10;
+			Node nod = new Node(n);
+			nod.next = index.next;
+			index.next = nod;
+			temp = temp / 10;
+		}while(temp != 0);
+		return head.next;
+	}
+	
+	public void add(AddInList b)
+	{
+		Node index1 = head.next;
+		Node index2 = b.head.next;
+		int sum1 = 0;
+		int sum2 = 0;
+		while(index1 != null)
+		{
+			int oneBit1 = index1.oneBit;
+			sum1 = oneBit1 + sum1 * 10;
+			index1 = index1.next;
+		}
+System.out.println(sum1);
+		while(index2 != null)
+		{
+			int oneBit2 = index2.oneBit;
+			sum2 = oneBit2 + sum2 * 10;
+			index2 = index2.next;
+		}
+System.out.println(sum2);
+		Node res = initia(sum1 + sum2).head.next;
+		while(res != null)
+		{
+			System.out.print(res.oneBit);
+			res = res.next;
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		AddInList adl = new AddInList();
+		adl.initia(92);
+		AddInList adl2 = new AddInList();
+		adl2.initia(123);
+		adl.disList();
+		adl2.disList();
+		adl.add(adl2);
+	}
+
+}
+
+class Node
+{
+	 int oneBit;
+	 Node next;
+	
+	Node()
+	{
+		oneBit = 0;
+		next = null;
+	}
+	
+	Node(int oneBit)
+	{
+		if(oneBit >=0 && oneBit <=9)
+			this.oneBit = oneBit;
+		next = null;
+	}
+	
+}

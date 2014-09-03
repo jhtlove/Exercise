@@ -1,0 +1,43 @@
+package division_recursion;
+
+public class MergeSort
+{
+
+	//a,b升序排列，最后也升序排列
+	public static int[] merge(int a[],int left,int right)
+	{
+		if(left < right)
+		{
+			int mid = (left + right) / 2;
+		}
+		return a;
+	}
+	
+	public static void mergeSort(int arr[],int head,int tail)
+	{
+		if(head <tail)
+		{
+			int mid = (head + tail) / 2;
+			mergeSort(arr,head,mid);
+			mergeSort(arr,mid+1,tail);
+			//merge()
+		}
+	}
+	
+	public static void display(int arr[])
+	{
+		for(int a : arr)
+		{
+			System.out.print(a);
+		}
+		System.out.println();
+	}
+
+	public static void main(String[] args)
+	{
+		int a[] = {1,2,3,5};
+		int b[] = {2,4,9};
+		display(merge(a,b));
+	}
+
+}

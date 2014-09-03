@@ -1,0 +1,42 @@
+package beanutils;
+
+import java.lang.reflect.InvocationTargetException;
+
+import org.apache.commons.beanutils.*;
+import org.apache.commons.logging.*;
+
+public class Demo1
+{
+	public static void main(String[] args)
+	{
+		String name = "Tom";
+		String pwd = "123";
+		String age = "12";
+		User u = new User();
+		System.out.println(null instanceof String);
+		try
+		{
+			BeanUtils.getProperty(u, "name");
+			//age是String而bean中是int，只支持8中基本数据类型自动转换
+			BeanUtils.setProperty(u, "age", age);
+			System.out.println(u.getAge());
+			
+		}
+		catch (IllegalAccessException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (InvocationTargetException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (NoSuchMethodException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

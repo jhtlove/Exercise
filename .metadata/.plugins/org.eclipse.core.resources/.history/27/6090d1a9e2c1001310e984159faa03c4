@@ -1,0 +1,63 @@
+package beanutils;
+
+import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.beanutils.*;
+import org.apache.commons.logging.*;
+
+public class Demo1
+{
+	//用map集合的值填充到bean中;map中key与bean 属性名称一致
+	public void test1()
+	{
+		Map<String,String> m = new HashMap<String,String>();
+		m.put("name", "李四");
+		m.put("age","15" );
+		m.put("birthday", "1999-09-09");
+		m.put("pwd", "aa134");
+		Person pp = new Person();
+		BeanUtils.populate(pp, m);
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		String name = "Tom";
+		String pwd = "123";
+		String birthday = "1990-6-25";
+		String age = "22";
+		User u = new User();
+		
+		//text包中
+		//y	Year	Year	1996; 96
+		//Y	Week year	Year	2009; 09
+		//D	Day in year	Number	189
+		//d	Day in month	Number	10
+		//例子： "yyyy.MM.dd G 'at' HH:mm:ss z" 结果： 2001.07.04 AD at 12:08:56 PDT
+		SimpleDateFormat  df = new SimpleDateFormat("yyyy-MM-DD");
+//System.out.println(null instanceof String);//false;空值不是string类型
+		try
+		{
+			BeanUtils.getProperty(u, "name");
+			//age是String而bean中是int，只支持8中基本数据类型自动转换
+			BeanUtils.setProperty(u, "age", age);
+			System.out.println(u.getBirthday());
+		}
+		catch (IllegalAccessException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (NoSuchMethodException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

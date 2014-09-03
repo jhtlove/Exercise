@@ -1,0 +1,21 @@
+package division_recursion;
+/**
+ * 把大整数分为多段计算？  不放入long,放入整形数组？或者 list里面？
+ * 增强大整数乘法的可行性
+ */
+public class BigIntegerMultiplication2
+{
+	private int a[] = {23,456,789,454,561};//表示23456789454561这个数，每3位分隔一下
+	private int b[] = {741,852,963,789,621};
+	
+	public static void multiply()
+	{
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		
+	}
+
+}

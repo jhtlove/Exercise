@@ -1,0 +1,119 @@
+package my_sudoku;
+
+/***
+ * 数独游戏 关键是如何产生有解的数字矩阵？算法的可扩展性（分治递归？）
+ * 
+ */
+public class Sudoku
+{
+	private int size = 9;// 9 * 9 的数独游戏,一行元素个数9
+	private SubDiamonds sudoku[][] = null;//数独
+	public static final Sudoku instance = new Sudoku();
+	
+	public void create()
+	{
+		sudoku = new SubDiamonds[3][3];// 这样创建数独对吗？
+
+		for (int i = 0; i < sudoku.length; i++)
+		{
+			for (int j = 0; j < sudoku[i].length; j++)
+			{
+				sudoku[i][j] = new SubDiamonds(3);//每个里面存的又是一个SubDiamond对象，对象要new
+			}
+		}
+	}
+	
+	//打印整个数独
+	public void display()
+	{
+		int k = 0;//打印子方块第k行
+		for (int i = 0; i < sudoku.length; i++)
+		{
+			for(k=0;k<this.sudoku.length;k++)
+			{
+				for (int j = 0; j < sudoku[i].length; j++)
+				{
+					sudoku[i][j].disOneLine(k);
+				}
+				System.out.println();
+			}
+			System.out.println("------------------------------");
+		}
+		
+	}
+
+	public static void main(String[] args)
+	{
+		instance.create();
+		instance.display();
+	}
+
+}
+
+// 子方块
+class SubDiamonds
+{
+	int size;// 子方块 3 * 3
+	int subArr[][];// 二维数组，表示子方块
+
+	SubDiamonds()
+	{
+		size = 3;
+		subArr = new int[size][size];// 内存分析：这样也创建了第二维的空间，还是只是声明了？
+	}
+
+	SubDiamonds(int size)
+	{
+		this.size = size;
+		subArr = new int[size][size];
+	}
+
+	// 判断某个元素是否在方块里面
+	public boolean inSubArr(int k)
+	{
+		int i, j;
+		for (i = 0; i < this.subArr.length; i++)
+		{
+			for (j = 0; j < this.subArr[i].length; j++)
+			{
+				if (k == this.subArr[i][j])
+					return true;
+			}
+		}
+		return false;
+	}
+
+	// 判断格子是否完整(最大n*n，最小1，没有重复,这样来判断？排序？)
+	public boolean isIntact()
+	{
+		for (int k = 1; k <= size * size; k++)
+		{
+			if (!inSubArr(k))
+				return false;
+		}
+		return true;
+	}
+	
+	public void display()
+	{
+		int i, j;
+		for (i = 0; i < this.subArr.length; i++)
+		{
+			for (j = 0; j < this.subArr[i].length; j++)
+			{
+				System.out.print(this.subArr[i][j] + "  ");
+			}
+			System.out.println();
+		}
+	}
+	
+	//显示数组第k行
+	public void disOneLine(int k)
+	{
+		for(int i=0;i<this.subArr[k].length;i++)
+		{
+			System.out.print(this.subArr[k][i] + "  ");
+		}
+		System.out.print("|");
+	}
+}

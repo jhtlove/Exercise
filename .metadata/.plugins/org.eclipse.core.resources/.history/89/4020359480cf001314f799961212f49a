@@ -1,0 +1,81 @@
+package division_recursion;
+
+public class MergeSort
+{
+
+	//a,b升序排列，最后也升序排列
+	public static int[] merge(int arr[],int left,int right)
+	{
+		if(left < right)
+		{
+			int b[] = new int[arr.length];
+			for(int i=0;i<arr.length;i++)
+			{
+				b[i] = arr[i];
+			}
+			
+			int mid = (left + right) / 2;
+			
+			int l = left;
+			int m = mid + 1;//
+			int k = 0;
+
+			while(l <= mid && m <= right)
+			{
+				
+				if(b[l] < b[m])
+				{
+					arr[k] = b[left];
+					l++;
+				}
+				else
+				{
+					arr[k] = b[m];
+					m++;
+				}
+				k++;
+			}
+			while(l <= mid)
+			{
+				arr[k] = b[l];//
+				k++;
+				l++;
+			}
+			while(m <= right)
+			{
+				arr[k] = b[m];
+				k++;
+				m++;
+			}
+		}
+		return arr;
+		
+	}
+	
+	public static void mergeSort(int arr[],int head,int tail)
+	{
+		if(head < tail)
+		{
+			int mid = (head + tail) / 2;
+			mergeSort(arr,head,mid);
+			mergeSort(arr,mid+1,tail);
+			merge(arr,head,tail);
+		}
+	}
+	
+	public static void display(int arr[])
+	{
+		for(int a : arr)
+		{
+			System.out.print(a);
+		}
+		System.out.println();
+	}
+
+	public static void main(String[] args)
+	{
+		int a[] = {1,7,9,  2,3,5};//前半段，后半段，各自有序
+		display(merge(a,0,a.length-1));
+	}
+
+}

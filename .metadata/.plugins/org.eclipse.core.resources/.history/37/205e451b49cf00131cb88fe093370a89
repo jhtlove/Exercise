@@ -1,0 +1,39 @@
+package division_recursion;
+/**
+ * 大整数乘法，溢出？long 8 字节 -2的 63次方--2的63次方减一，java补码
+ */
+public class BigIntegerMultiplication
+{
+
+	public static int count(long n)
+	{
+		int c = 0;
+		while(n != 0)
+		{
+			c++;
+			n = n / 10;
+		}
+//System.out.println(c);
+		return c;
+	}
+	
+	public static long mulip(long a,long b)
+	{
+		int num1 = count(a) / 2;
+		int num2 = count(b) / 2;
+		int num = Math.min(num1, num2);
+		long c = (long)Math.pow(10, num) ;
+		long a1 = a / c;
+		long a2 = a % c;
+		long b1 = b / c;
+		long b2 = b % c;
+		return (a1*b1*c*c + a1*b2*c + a2*b1*c + a2*b2);
+	}
+	
+	public static void main(String[] args)
+	{
+		System.out.println(123412345l * 657812345l);
+		System.out.println(mulip(123412345l,657812345l));
+	}
+
+}

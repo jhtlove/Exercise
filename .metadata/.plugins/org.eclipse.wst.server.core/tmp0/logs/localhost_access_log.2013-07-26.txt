@@ -1,0 +1,8 @@
+127.0.0.1 - - [26/Jul/2013:19:22:24 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [26/Jul/2013:19:22:28 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 528
+127.0.0.1 - - [26/Jul/2013:19:22:28 +0800] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [26/Jul/2013:19:22:40 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 200 1010
+127.0.0.1 - - [26/Jul/2013:19:22:40 +0800] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [26/Jul/2013:19:44:08 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [26/Jul/2013:19:44:12 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 528
+127.0.0.1 - - [26/Jul/2013:19:44:12 +0800] "GET /favicon.ico HTTP/1.1" 404 973

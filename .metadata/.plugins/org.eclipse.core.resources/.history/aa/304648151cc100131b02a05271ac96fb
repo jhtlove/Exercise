@@ -1,0 +1,6 @@
+package beanutils;
+
+public class User
+{
+
+}

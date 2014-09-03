@@ -1,0 +1,86 @@
+package testquestion;
+
+public class AddInList
+{
+	private Node head = new Node();
+	
+	public void disList()
+	{
+		Node t = head;
+		while(t != null)
+		{
+			System.out.print(t.oneBit);
+		}
+		System.out.println();
+	}
+	
+	public Node initia(int num)
+	{
+		int temp = num;
+		int n = 0;
+		Node index = head;
+		do
+		{
+			n = temp % 10;
+			Node nod = new Node(n);
+			index.next = nod;
+			index = index.next;
+			temp = temp / 10;
+		}while(temp != 0);
+		return head;
+	}
+	
+	public void add(Node b)
+	{
+		Node index1 = head.next;
+		Node index2 = b.next;
+		int sum1 = 0;
+		int sum2 = 0;
+		while(index1 != null)
+		{
+			int oneBit1 = index1.oneBit;
+			sum1 = oneBit1 + sum1 * 10;
+			index1 = index1.next;
+		}
+		while(index2 != null)
+		{
+			int oneBit2 = index2.oneBit;
+			sum2 = oneBit2 + sum2 * 10;
+			index2 = index2.next;
+		}
+		Node res = initia(sum1 + sum2);
+		while(res.next != null)
+		{
+			System.out.print(res.next.oneBit);
+			res = res.next;
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		AddInList adl = new AddInList();
+		adl.initia(92);
+		adl.add(new Node(123));
+	}
+
+}
+
+class Node
+{
+	 int oneBit;
+	 Node next;
+	
+	Node()
+	{
+		oneBit = 0;
+		next = null;
+	}
+	
+	Node(int oneBit)
+	{
+		if(oneBit >=0 && oneBit <=9)
+			this.oneBit = oneBit;
+		next = null;
+	}
+	
+}

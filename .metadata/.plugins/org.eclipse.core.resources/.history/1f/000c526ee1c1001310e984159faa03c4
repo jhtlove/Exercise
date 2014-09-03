@@ -1,0 +1,46 @@
+package beanutils;
+
+import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
+import org.apache.commons.beanutils.*;
+import org.apache.commons.logging.*;
+
+public class Demo1
+{
+	public static void main(String[] args)
+	{
+		String name = "Tom";
+		String pwd = "123";
+		String birthday = "1990-6-25";
+		String age = "22";
+		User u = new User();
+		
+		//y	Year	Year	1996; 96
+		//Y	Week year	Year	2009; 09
+		//D	Day in year	Number	189
+		//d	Day in month	Number	10
+		//例子： "yyyy.MM.dd G 'at' HH:mm:ss z" 结果： 2001.07.04 AD at 12:08:56 PDT
+		SimpleDateFormat  df = new SimpleDateFormat("yyyy-MM-DD");
+//System.out.println(null instanceof String);//false;空值不是string类型
+		try
+		{
+			BeanUtils.getProperty(u, "name");
+			//age是String而bean中是int，只支持8中基本数据类型自动转换
+			BeanUtils.setProperty(u, "age", age);
+			System.out.println(u.getBirthday());
+		}
+		catch (IllegalAccessException e)
+		{
+			e.printStackTrace();
+		}
+		catch (InvocationTargetException e)
+		{
+			e.printStackTrace();
+		}
+		catch (NoSuchMethodException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

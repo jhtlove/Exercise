@@ -1,0 +1,15 @@
+127.0.0.1 - - [08/Jul/2013:20:53:53 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [08/Jul/2013:20:54:04 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 404
+127.0.0.1 - - [08/Jul/2013:20:55:36 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 466
+127.0.0.1 - - [08/Jul/2013:20:55:43 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 500 1412
+127.0.0.1 - - [08/Jul/2013:21:02:53 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 500 1412
+127.0.0.1 - - [08/Jul/2013:21:03:14 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [08/Jul/2013:21:03:16 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 466
+127.0.0.1 - - [08/Jul/2013:21:03:18 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 500 1412
+127.0.0.1 - - [08/Jul/2013:21:04:52 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 500 1412
+127.0.0.1 - - [08/Jul/2013:21:06:59 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [08/Jul/2013:21:07:01 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 466
+127.0.0.1 - - [08/Jul/2013:21:07:13 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 500 1412
+127.0.0.1 - - [08/Jul/2013:21:08:37 +0800] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [08/Jul/2013:21:08:39 +0800] "GET /StudentManagement/index.jsp HTTP/1.1" 200 466
+127.0.0.1 - - [08/Jul/2013:21:08:42 +0800] "POST /StudentManagement/AddStudent HTTP/1.1" 500 1412

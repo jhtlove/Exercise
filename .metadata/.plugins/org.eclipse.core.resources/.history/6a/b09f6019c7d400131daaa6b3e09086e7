@@ -1,0 +1,17 @@
+package my_sudoku;
+/***
+ * 数独游戏
+*关键是如何产生有解的数字矩阵？算法的可扩展性（分治递归？）
+ *
+ */
+public class Sudoku
+{
+	private int size = 9;//9 * 9 的数独游戏
+
+	public static void main(String[] args)
+	{
+		
+
+	}
+
+}

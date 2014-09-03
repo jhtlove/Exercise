@@ -1,0 +1,18 @@
+package beanutils;
+
+import org.apache.commons.beanutils.*;
+import org.apache.commons.logging.*;
+
+public class Demo1
+{
+	public static void main(String[] args)
+	{
+		String name = "Tom";
+		String pwd = "123";
+		String age = "12";
+		User u = new User();
+	
+		
+	}
+
+}

@@ -1,0 +1,38 @@
+package my.demo;
+
+public class TestEnum
+{
+
+	enum Grade{
+		A("100-70")
+		{
+			//实现抽象方法 getLocal()
+			public  String getLocal()
+			{
+				return("优");
+			}
+		}
+		,B("69-60"),C("59-0");//分号必须有
+		
+		private String value;
+		
+		private Grade(String s)
+		{
+			value = s;
+		}
+		
+		public String getValue()
+		{
+			return this.value;
+		}
+		
+		public abstract String getLocal();//抽象方法没有方法体，必须加分号
+		}
+	
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package my.demo;
+
+public class TestEnum
+{
+
+	enum Grade{
+		A("100-70"),B("69-60"),C("59-0");//∑÷∫≈±ÿ–Î”–
+		
+		private String value;
+		
+		private Grade(String s)
+		{
+			value = s;
+		}
+		
+		public String getValue()
+		{
+			return this.value;
+		}
+		
+		};
+	
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}

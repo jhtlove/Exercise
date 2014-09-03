@@ -1,0 +1,54 @@
+package test.basic;
+
+public class Count3Quit1
+{
+	
+	//int a = b = 2;//错误！不能连等；可以int a=2，b=2;
+	
+	private class Node
+	{
+		int date;
+		boolean isIn ;
+		
+		Node(){}
+		
+		Node(int date)
+		{
+			this.date = date;
+			isIn = true;
+		}
+	}
+	
+	public static void count(Node[] arr)
+	{
+		
+		int index = 0;
+		int count = 3;
+		for(int i=0;i<arr.length;i++)
+		{
+			do{
+				if(arr[index].isIn == true)
+				{
+					count--;
+				}
+				if(count == 0)
+				{
+					System.out.print(arr[index].date);
+					
+				}
+				index = ++index % arr.length;
+				
+			}while(count != 0);//必须有分号
+			count = 3;
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		Node a = new Node();
+		// Node[] arr = {new Node(1),new Node(2),new Node(3),new Node(4),new Node(5)};
+		count(arr);
+
+	}
+
+}

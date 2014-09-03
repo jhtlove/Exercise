@@ -1,0 +1,20 @@
+package division_recursion;
+/**
+ * 把大整数分为多段计算？  不放入long,放入整形数组？或者 list里面？
+ */
+public class BigIntegerMultiplication2
+{
+
+
+	
+	public static void multiply()
+	{
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		
+	}
+
+}
