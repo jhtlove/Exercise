@@ -7,8 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.beanutils.*;
+import org.apache.commons.beanutils.*;//为啥不认识了？
 import org.apache.commons.logging.*;
+
 
 public class Demo1
 {

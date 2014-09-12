@@ -37,7 +37,7 @@ public class QuickSort
 	{
 		////这句话不能少，防止递归时，堆栈溢出；
 //放在posit()里用这句没用,因为posit()还是会返回一个值，继续传给m，继续递归下去，不能结束递归。
-		if(h>t) return;//出递归！
+		if(h>=t) return;//出递归！
 		int m = posit(arr,h,t) ;
 		quikSort(arr,h,m-1);
 		quikSort(arr,m+1,t);
